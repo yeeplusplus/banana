@@ -1,0 +1,37 @@
+<div class="row-fluid">
+  <div class="span4">
+    <form class="input-append">
+      <h6>Add Workflow</h6>
+      <!-- <input bs-typeahead="fields.list" type="text" class="input-small" ng-model='newfield'>
+      <button class="btn" ng-click="toggle_field(newfield);newfield=''"><i class="icon-plus"></i></button> -->
+      <select class="input-medium" ng-model="panel.workflow.action" ng-options="w for w in ['Lookup Hive Data']"></select>
+      <button class="btn" style="margin-left:0px;"><i class="icon-plus"></i></button>
+    </form>
+  </div>
+</div>
+
+<h5>Workflow 01: Lookup Hive Data</h5>
+<div class="row-fluid">
+  <div class="span3 offset1">
+    <strong>Title:</strong>
+  </div>
+  <div class="span6">
+    <input type="text" placeholder="workflow title" ng-model="panel.workflow.title">
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span3 offset1">
+    <strong>Hive Query Parameters</strong>
+  </div>
+  <div class="span6">
+    <textarea rows=5 ng-model="panel.workflow.execute"></textarea>
+  </div>
+</div>
+<div class="row-fluid">
+  <div class="span3 offset1">
+    <strong>statusdir</strong>
+  </div>
+  <div class="span4">
+    <input type="text" placeholder="myoutput" ng-model="panel.workflow.statusdir">
+  </div>
+</div>

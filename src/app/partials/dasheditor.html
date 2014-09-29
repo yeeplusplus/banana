@@ -2,7 +2,7 @@
   <div class="pull-right editor-title">Dashboard settings</div>
 
   <div ng-model="editor.index" bs-tabs>
-    <div ng-repeat="tab in ['General','Rows','Controls','Solr']" data-title="{{tab}}">
+    <div ng-repeat="tab in ['General','Rows','Controls','Solr','Hadoop']" data-title="{{tab}}">
     </div>
   </div>
   <!-- General tab -->
@@ -160,6 +160,28 @@
       <div class="span9">
         <h6>Global Query Parameters <tip>Specify query parameters to be appended to all queries of the dashboard panels.</tip></h6>
         <input type="text" class="input-xxlarge" placeholder="e.g. &defType=lucid&qt=lucid&df=message&..." ng-model="dashboard.current.solr.global_params">
+      </div>
+    </div>
+  </div>
+  <!-- Hadoop tab -->
+  <div ng-show="editor.index == 4">
+    <div class="row-fluid">
+      <h4>Hadoop Settings</h4>
+    </div>
+    <div class="row-fluid">
+      <div class="span4">
+        <h6>Hive WebHCat Server</h6>
+        <input type="text" class="input-medium" ng-model="dashboard.current.hadoop.hive_webhcat_server" placeholder="http://localhost:50111">
+      </div>
+      <div class="span4">
+        <h6>User Name</h6>
+        <input type="text" class="input-medium" ng-model="dashboard.current.hadoop.hive_webhcat_user" placeholder="hue">
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span4">
+        <h6>WebHDFS NameNode Server</h6>
+        <input type="text" class="input-medium" ng-model="dashboard.current.hadoop.webhdfs_namenode_server" placeholder="http://localhost:50070">
       </div>
     </div>
   </div>

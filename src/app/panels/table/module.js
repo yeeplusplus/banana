@@ -31,7 +31,7 @@ function (angular, app, _, kbn, moment) {
 
   var module = angular.module('kibana.panels.table', []);
   app.useModule(module);
-  module.controller('table', function($rootScope, $scope, fields, querySrv, dashboard, filterSrv) {
+  module.controller('table', function($rootScope, $scope, $http, $window, fields, querySrv, dashboard, filterSrv) {
     $scope.panelMeta = {
       modals : [
         {
@@ -49,6 +49,10 @@ function (angular, app, _, kbn, moment) {
         {
           title:'Paging',
           src: 'app/panels/table/pagination.html'
+        },
+        {
+          title:'Workflow',
+          src: 'app/panels/table/workflow.html'
         },
         {
           title:'Queries',
@@ -383,6 +387,26 @@ function (angular, app, _, kbn, moment) {
       }
       return obj;
     };
+
+    $scope.run_workflow = function(field, value) {
+      console.log('field =',field,'value =',value,'workflow.action =',$scope.panel.workflow.action,'workflow.title=',$scope.panel.workflow.title);
+      $window.open('app/panels/table/lookuphive.html');
+
+      $http({
+        method: 'GET',
+        url: 'http://localhost:50111',
+        params: {'value': value}
+      })
+      .success(function(data) {
+        console.log('http success');
+
+      })
+      .error(function(data) {
+        console.log('http error');
+        // $window.alert('http error');
+
+      });
+    }
   });
 
   // This also escapes some xml sequences

@@ -52,6 +52,11 @@ function (angular, $, kbn, _, config, moment, Modernizr) {
         core_name: config.solr_core,
         core_list: [],
         global_params: ''
+      },
+      hadoop: {
+        hive_webhcat_server: config.hive_webhcat_server,
+        hive_webhcat_user: config.hive_webhcat_user,
+        webhdfs_namenode_server: config.webhdfs_namenode_server
       }
     };
     
