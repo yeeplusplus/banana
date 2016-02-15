@@ -21,7 +21,7 @@ define([
 function (angular, $, _, appLevelRequire) {
   "use strict";
 
-  var app = angular.module('kibana', []),
+  var app = angular.module('kibana', ['ngRoute']),
     // we will keep a reference to each module defined before boot, so that we can
     // go back and allow it to define new features later. Once we boot, this will be false
     pre_boot_modules = [],

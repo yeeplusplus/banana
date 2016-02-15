@@ -31,11 +31,14 @@ require.config({
     moment:                   '../vendor/moment',
     filesaver:                '../vendor/filesaver',
 
-    angular:                  '../vendor/angular/angular',
+    angular:                  '../bower_components/angular/angular',
     'angular-dragdrop':       '../vendor/angular/angular-dragdrop',
-    'angular-strap':          '../vendor/angular/angular-strap',
+    'angular-strap':          '../bower_components/angular-strap/dist/angular-strap',
     'angular-sanitize':       '../vendor/angular/angular-sanitize',
     'angular-mocks':          '../vendor/angular/angular-mocks',
+    'angular-animate':        '../bower_components/angular-animate/angular-animate',
+    'angular-route':          '../bower_components/angular-route/angular-route',
+    'angular-strap-tpl':      '../bower_components/angular-strap/dist/angular-strap.tpl',
 
     timepicker:               '../vendor/angular/timepicker',
     datepicker:               '../vendor/angular/datepicker',
@@ -104,7 +107,9 @@ require.config({
     'angular-route':        ['angular'],
     'angular-touch':        ['angular'],
 
+    'angular-animate':      ['angular'],
     'angular-strap':        ['angular', 'bootstrap','timepicker', 'datepicker'],
+    'angular-strap-tpl':    ['angular', 'angular-strap'],
 
     timepicker:             ['jquery', 'bootstrap'],
     datepicker:             ['jquery', 'bootstrap'],

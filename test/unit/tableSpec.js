@@ -76,7 +76,13 @@ function(angular, app, _, kbn, moment) {
 	      imgFieldHeight: '85px' // height of <img> (if enabled)
 	    };
 
-	    var ctrl = $controller('table', {$scope:scope});
+	    var ctrl = $controller('table', {
+	      $scope    : scope,
+	      fields    : [],
+	      querySrv  : {},
+	      dashboard : {},
+	      filterSrv : {}
+	    });
 			expect(ctrl).toBeDefined();
 
 			scope.set_refresh(true);
